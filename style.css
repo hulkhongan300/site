@@ -57,6 +57,12 @@ main {
   color: var(--fg);
 }
 
+.brand img {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 .site-header nav {
   display: flex;
   gap: 1.25rem;
