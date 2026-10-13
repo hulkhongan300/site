@@ -246,7 +246,7 @@ a:hover { color: var(--fg); }
 }
 .project-links a:hover { text-decoration: underline; }
 
-.section-about { border-top: 3px solid var(--border); }
+.section-about { }
 
 .about-grid {
   display: grid;
