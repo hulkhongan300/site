@@ -1,61 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>site</title>
-  <meta name="description" content="A simple demo site hosted on GitHub Pages.">
+  <title>Afonso Calisto</title>
+  <meta name="description" content="Portfolio of Afonso Calisto — Rust, Java, TypeScript projects">
   <link rel="icon" href="assets/avatar.jpg" type="image/jpeg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="./">
-      <img src="assets/avatar.jpg" width="32" height="32" alt="">
-      <span>Afonso Calisto</span>
-    </a>
-    <nav>
-      <a href="#features">Features</a>
+    <div class="header-top">
+      <div class="meta-line">
+        <span class="vol">Vol. I · No. 01</span>
+        <span class="tagline">A portfolio of second minds</span>
+      </div>
+      <span class="tagline free">Free to read · Free to keep</span>
+    </div>
+    <div class="header-title">
+      <div class="brand">
+        <img src="assets/avatar.jpg" width="48" height="48" alt="">
+        <span class="name">Afonso Calisto</span>
+      </div>
+      <p class="subtitle">On the keeping of code</p>
+    </div>
+    <nav class="site-nav">
+      <a href="#projects">Projects</a>
       <a href="#about">About</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Hello, world.</h1>
-      <p>This is a demo page. Edit <code>index.html</code> and it changes.</p>
-      <a class="button" href="#features">Get started</a>
+  <main class="site-main">
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Selected work</h2>
+        <p class="section-subtitle">Code · Systems · Experiments</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="project-lang rust">Rust</span>
+            <span class="project-name">shamash</span>
+          </div>
+          <h3 class="project-title">Wake-word Discord music bot with local STT</h3>
+          <p class="project-desc">Autonomous voice bot that joins channels on entry, listens for "Shamash, play…" via local Parakeet/whisper.cpp transcription, searches YouTube with smart filtering (skips clips/covers/remixes), queues requests, and shows a live dashboard embed with controls. No cloud audio leaves the host.</p>
+          <div class="project-links">
+            <a href="https://github.com/hulkhongan300/shamash" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="project-lang java">Java</span>
+            <span class="project-name">Talk2MeJava</span>
+          </div>
+          <h3 class="project-title">Push-to-talk voice-to-clipboard desktop app</h3>
+          <p class="project-desc">Hold G to record → local Whisper.cpp (via JNA wrapper) transcribes → auto-copies to clipboard. Dedicated audio pipeline thread with VAD, singleton Whisper engine, circular transcription history. Whisper model bundled; setup script downloads deps.</p>
+          <div class="project-links">
+            <a href="https://github.com/hulkhongan300/Talk2MeJava" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="project-lang typescript">TypeScript</span>
+            <span class="project-name">Sem-Erros-React-Public</span>
+          </div>
+          <h3 class="project-title">React + TypeScript + Vite starter template</h3>
+          <p class="project-desc">Minimal production-ready setup: Vite, React 18, TypeScript, ESLint with type-aware rules, SWC/Babel options. Configured for type-checked linting (tseslint strict), React Fast Refresh, and modern ESLint flat config.</p>
+          <div class="project-links">
+            <a href="https://github.com/hulkhongan300/Sem-Erros-React-Public" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="project-lang java">Java</span>
+            <span class="project-name">Sem-Erros-Public</span>
+          </div>
+          <h3 class="project-title">Maven-based Java coursework collection</h3>
+          <p class="project-desc">Multi-module Maven project with wrapper (mvnw), structured for academic assignments. Organized source under src/, shared resources in FilesForUs/. Demonstrates standard Java project layout and build automation.</p>
+          <div class="project-links">
+            <a href="https://github.com/hulkhongan300/Sem-Erros-Public" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="project-lang java">Java</span>
+            <span class="project-name">Work4QS</span>
+          </div>
+          <h3 class="project-title">Software Quality course solutions</h3>
+          <p class="project-desc">Implementations for Software Quality classwork — testing strategies, static analysis, mutation testing, and quality metrics. Focus on JUnit, Gradle/Maven builds, and CI pipelines for reliability.</p>
+          <div class="project-links">
+            <a href="https://github.com/hulkhongan300/Work4QS" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="features" class="features">
-      <h2>Features</h2>
-      <ul>
-        <li>
-          <h3>Static HTML</h3>
-          <p>No build step, no framework. GitHub Pages serves these files as-is.</p>
-        </li>
-        <li>
-          <h3>Plain CSS</h3>
-          <p>One stylesheet, custom properties, dark mode included.</p>
-        </li>
-        <li>
-          <h3>Responsive</h3>
-          <p>Works from a phone in portrait to a wide desktop.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>
-        Serving from <code>github.io</code>. This section is a placeholder &mdash;
-        let's replace it with whatever the site is actually about.
-      </p>
+    <section id="about" class="section section-about">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">About</h2>
+          <p>Software developer focused on systems that think out loud — voice interfaces, local-first tooling, and the craft of connecting thought to code. Mostly Rust, Java, and TypeScript these days.</p>
+          <p>This site is deliberately plain: static HTML, one CSS file, zero JavaScript frameworks. GitHub Pages serves it as-is. Dark mode by default because code belongs on dark backgrounds.</p>
+        </div>
+        <aside class="about-sidebar">
+          <h3 class="sans">Currently</h3>
+          <ul class="now-list">
+            <li>Building voice-driven Discord tooling in Rust</li>
+            <li>Exploring local LLM integration for dev workflows</li>
+            <li>Writing about note-taking as correspondence</li>
+          </ul>
+          <h3 class="sans mt">Find me</h3>
+          <ul class="now-list">
+            <li><a href="https://github.com/hulkhongan300" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </aside>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 site</p>
+    <div class="footer-line">
+      <p class="sans">Afonso Calisto · Iteration 01 · Ledger</p>
+      <p class="mono">Printed for the mind's library</p>
+    </div>
   </footer>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const stored = localStorage.getItem('theme');
+
+      function applyTheme(theme) {
+        html.dataset.theme = theme;
+        localStorage.setItem('theme', theme);
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      }
+
+      if (stored) {
+        applyTheme(stored);
+      } else {
+        applyTheme('dark');
+      }
+
+      toggle.addEventListener('click', function() {
+        const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
