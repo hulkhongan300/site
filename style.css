@@ -45,7 +45,6 @@ a:hover { color: var(--fg); }
   max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1.5rem 2rem;
-  border-bottom: 4px solid var(--border);
 }
 
 .header-top {
@@ -114,7 +113,6 @@ a:hover { color: var(--fg); }
   align-items: center;
   gap: 1.5rem;
   padding: 1rem 0;
-  border-bottom: 4px solid var(--border);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -150,7 +148,7 @@ a:hover { color: var(--fg); }
   padding: 0 1.5rem 4rem;
 }
 
-.section { margin-top: 3rem; padding-top: 2rem; border-top: 4px solid var(--border); }
+.section { margin-top: 3rem; padding-top: 2rem; }
 
 .section-header { text-align: center; margin-bottom: 2rem; }
 
@@ -296,7 +294,6 @@ a:hover { color: var(--fg); }
   max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1.5rem 2rem;
-  border-top: 3px solid var(--border);
 }
 
 .footer-line {
