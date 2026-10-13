@@ -58,7 +58,7 @@ main {
 }
 
 .brand img {
-  border-radius: 50%;
+  border-radius: 0.5rem;
   object-fit: cover;
   display: block;
 }
