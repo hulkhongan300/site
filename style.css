@@ -246,7 +246,7 @@ a:hover { color: var(--fg); }
 }
 .project-links a:hover { text-decoration: underline; }
 
-.section-about { }
+.section-about { padding-top: 2rem; }
 
 .about-grid {
   display: grid;
