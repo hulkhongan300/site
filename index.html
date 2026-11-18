@@ -1,164 +1,375 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Afonso Calisto</title>
-  <meta name="description" content="Portfolio of Afonso Calisto — Rust, Java, TypeScript projects">
-  <link rel="icon" href="assets/avatar.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afonso Calisto</title>
+<meta name="description" content="Afonso Calisto: Rust, Java and C projects, mostly ones that run on your own machine.">
+<link rel="icon" href="assets/avatar.jpg" type="image/jpeg">
+<script>
+  // In <head> so a saved theme applies before first paint (no flash).
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-top">
-      <div class="meta-line">
-        <span class="vol">Vol. I · No. 01</span>
-        <span class="tagline">A portfolio of second minds</span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="arrowhead" d="M0 0L8 4L0 8z"/>
+    </marker>
+  </defs>
+</svg>
+
+<header class="bar wrap">
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#lab">Lab</a>
+    <button id="theme-toggle" class="toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="intro">
+      <img src="assets/avatar.jpg" width="64" height="64" alt="">
+      <div>
+        <h1>Afonso Calisto</h1>
+        <p>I'm a developer from Portugal. I write mostly Rust, Java and C, and I like free software.</p>
       </div>
-      <span class="tagline free">Free to read · Free to keep</span>
     </div>
-    <div class="header-title">
-      <div class="brand">
-        <img src="assets/avatar.jpg" width="48" height="48" alt="">
-        <span class="name">Afonso Calisto</span>
-      </div>
-      <p class="subtitle">On the keeping of code</p>
-    </div>
-    <nav class="site-nav">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
-        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"/>
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-        </svg>
-        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
+    <nav class="boot" aria-label="Projects">
+      <ul class="menu" id="menu">
+        <li><a href="#shamash"><span class="m-mark" aria-hidden="true"></span><span class="m-name">shamash</span><span class="m-desc">Discord music bot you talk to</span><span class="m-tag">Rust</span></a></li>
+        <li><a href="#beedb"><span class="m-mark" aria-hidden="true"></span><span class="m-name">beeDB</span><span class="m-desc">Distributed key-value database</span><span class="m-tag">Node.js</span></a></li>
+        <li><a href="#talk2me"><span class="m-mark" aria-hidden="true"></span><span class="m-name">Talk2MeJava</span><span class="m-desc">Push-to-talk, straight to your clipboard</span><span class="m-tag">Java</span></a></li>
+        <li><a href="#research"><span class="m-mark" aria-hidden="true"></span><span class="m-name">B450 research</span><span class="m-desc">Notes from taking a BIOS apart</span><span class="m-tag">Python</span></a></li>
+        <li><a href="#lab"><span class="m-mark" aria-hidden="true"></span><span class="m-name">lab/</span><span class="m-desc">A raylib window and coursework</span><span class="m-tag">C</span></a></li>
+      </ul>
+      <p class="hint">↑ ↓ to choose, Enter to open</p>
     </nav>
-  </header>
+  </section>
 
-  <main class="site-main">
-    <section id="projects" class="section">
-      <div class="section-header">
-        <h2 class="section-title">Selected work</h2>
-        <p class="section-subtitle">Code · Systems · Experiments</p>
-      </div>
+  <section id="projects" class="wrap section">
+    <header class="sec-head"><h2>Projects</h2></header>
+    <div class="sheets">
 
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-meta">
-            <span class="project-lang rust">Rust</span>
-            <span class="project-name">shamash</span>
+      <article class="sheet" id="shamash" aria-labelledby="shm-h">
+        <header class="sheet-head"><h3 id="shm-h">shamash</h3><span>Rust</span><span>Updated 2026-11-17</span><span class="state main">Main project</span></header>
+        <div class="sheet-body">
+          <div class="sheet-text">
+            <p class="lede">A Discord music bot you talk to. Say “groovy, play Sodade by Cesária Évora” in voice chat and it plays.</p>
+            <p>Only a small voice detector runs all the time. The wake model runs while someone is talking, and the large model only on what came after the wake word, so it stays cheap on an always-on box.</p>
+            <p>Requests are matched against YouTube Music's song catalog, so the artist's own upload beats a remix. When it isn't sure, it asks, and it remembers your answer next time.</p>
+            <h4>What works</h4>
+            <ul class="status">
+              <li><b aria-hidden="true">✓</b><span>Wake word and speech recognition on the host</span></li>
+              <li><b aria-hidden="true">✓</b><span>Whole albums, song memory, <code>/play</code> suggestions</span></li>
+              <li><b aria-hidden="true">✓</b><span>Joins and leaves the voice channel by itself</span></li>
+            </ul>
+            <p class="links"><a href="https://github.com/hulkhongan300/shamash">github.com/hulkhongan300/shamash ↗</a></p>
           </div>
-          <h3 class="project-title">Wake-word Discord music bot with local STT</h3>
-          <p class="project-desc">Autonomous voice bot that joins channels on entry, listens for "Shamash, play…" via local Parakeet/whisper.cpp transcription, searches YouTube with smart filtering (skips clips/covers/remixes), queues requests, and shows a live dashboard embed with controls. No cloud audio leaves the host.</p>
-          <div class="project-links">
-            <a href="https://github.com/hulkhongan300/shamash" target="_blank" rel="noopener">View on GitHub</a>
+          <div>
+            <table class="spec">
+              <tr><th scope="row">Language</th><td>Rust</td></tr>
+              <tr><th scope="row">Speech</th><td>transcribe.cpp, on the host</td></tr>
+              <tr><th scope="row">Models</th><td>Two, about 1 GB together</td></tr>
+              <tr><th scope="row">Audio sent out</th><td>None</td></tr>
+              <tr><th scope="row">Runs in</th><td>Docker or from source</td></tr>
+              <tr><th scope="row">License</th><td>MIT</td></tr>
+            </table>
+            <figure class="fig">
+              <svg viewBox="0 0 320 262" role="img" aria-label="Pipeline: voice chat, voice detector always on, wake model while talking, large model after the wake word, all local; then YouTube Music match and playback over the network.">
+                <rect x="20" y="1" width="280" height="36" rx="3"/><text x="34" y="24">Voice chat</text>
+                <path class="flow" d="M160 38V55"/>
+                <rect class="new" x="20" y="57" width="280" height="36" rx="3"/><text x="34" y="80">Voice detector · always on</text><text class="tag new" x="286" y="80" text-anchor="end">LOCAL</text>
+                <path class="flow" d="M160 94V111"/>
+                <rect class="new" x="20" y="113" width="280" height="36" rx="3"/><text x="34" y="136">Wake model · while talking</text><text class="tag new" x="286" y="136" text-anchor="end">LOCAL</text>
+                <path class="flow" d="M160 150V167"/>
+                <rect class="new" x="20" y="169" width="280" height="36" rx="3"/><text x="34" y="192">Large model · after “groovy”</text><text class="tag new" x="286" y="192" text-anchor="end">LOCAL</text>
+                <path class="flow" d="M160 206V223"/>
+                <rect class="kept" x="20" y="225" width="280" height="36" rx="3"/><text x="34" y="248">YouTube Music → play</text><text class="tag" x="286" y="248" text-anchor="end">NETWORK</text>
+              </svg>
+              <figcaption>Each model only runs when the one before it says so.</figcaption>
+            </figure>
           </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-meta">
-            <span class="project-lang java">Java</span>
-            <span class="project-name">Talk2MeJava</span>
-          </div>
-          <h3 class="project-title">Push-to-talk voice-to-clipboard desktop app</h3>
-          <p class="project-desc">Hold G to record → local Whisper.cpp (via JNA wrapper) transcribes → auto-copies to clipboard. Dedicated audio pipeline thread with VAD, singleton Whisper engine, circular transcription history. Whisper model bundled; setup script downloads deps.</p>
-          <div class="project-links">
-            <a href="https://github.com/hulkhongan300/Talk2MeJava" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-meta">
-            <span class="project-lang typescript">TypeScript</span>
-            <span class="project-name">Sem-Erros-React-Public</span>
-          </div>
-          <h3 class="project-title">React + TypeScript + Vite starter template</h3>
-          <p class="project-desc">Minimal production-ready setup: Vite, React 18, TypeScript, ESLint with type-aware rules, SWC/Babel options. Configured for type-checked linting (tseslint strict), React Fast Refresh, and modern ESLint flat config.</p>
-          <div class="project-links">
-            <a href="https://github.com/hulkhongan300/Sem-Erros-React-Public" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-meta">
-            <span class="project-lang java">Java</span>
-            <span class="project-name">Sem-Erros-Public</span>
-          </div>
-          <h3 class="project-title">Maven-based Java coursework collection</h3>
-          <p class="project-desc">Multi-module Maven project with wrapper (mvnw), structured for academic assignments. Organized source under src/, shared resources in FilesForUs/. Demonstrates standard Java project layout and build automation.</p>
-          <div class="project-links">
-            <a href="https://github.com/hulkhongan300/Sem-Erros-Public" target="_blank" rel="noopener">View on GitHub</a>
-          </div>
-        </article>
-
         </div>
-    </section>
+      </article>
 
-    <section id="about" class="section section-about">
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="section-title">About</h2>
-          <p>Software developer focused on systems that think out loud — voice interfaces, local-first tooling, and the craft of connecting thought to code. Mostly Rust, Java, and TypeScript these days.</p>
-          <p>This site is deliberately plain: static HTML, one CSS file, zero JavaScript frameworks. GitHub Pages serves it as-is. Dark mode by default because code belongs on dark backgrounds.</p>
+      <article class="sheet" id="beedb" aria-labelledby="bee-h">
+        <header class="sheet-head"><h3 id="bee-h">beeDB</h3><span>Node.js</span><span>Updated 2026-10-26</span><span class="state">Archived</span></header>
+        <div class="sheet-body">
+          <div class="sheet-text">
+            <p class="lede">A distributed key-value database in Node.js, built for a Distributed Systems course.</p>
+            <p>A reverse proxy hashes each key with MD5 and sends the request to the shard that owns it. Inside a shard, replicas elect a leader with Raft, and writes go through two-phase commit, so every replica applies a write or none do.</p>
+            <p>Finished course project, kept as an archive. The full technical report is in the repo.</p>
+            <p class="links"><a href="https://github.com/hulkhongan300/beeDB-archive">github.com/hulkhongan300/beeDB-archive ↗</a></p>
+          </div>
+          <div>
+            <table class="spec">
+              <tr><th scope="row">Language</th><td>JavaScript, Node.js 18+</td></tr>
+              <tr><th scope="row">Routing</th><td>MD5 of the key</td></tr>
+              <tr><th scope="row">Consensus</th><td>Raft leader election</td></tr>
+              <tr><th scope="row">Writes</th><td>Two-phase commit</td></tr>
+              <tr><th scope="row">Storage</th><td>One file per key</td></tr>
+              <tr><th scope="row">License</th><td>MIT</td></tr>
+            </table>
+            <figure class="fig">
+              <svg viewBox="0 0 320 245" role="img" aria-label="Architecture: an HTTP client talks to a reverse proxy on port 4000 that routes by MD5 of the key to shards 1 to N; each shard has replicas that use Raft and two-phase commit.">
+                <rect x="100" y="1" width="120" height="32" rx="3"/><text x="160" y="22" text-anchor="middle">HTTP client</text>
+                <path class="flow" d="M160 34V55"/>
+                <rect class="new" x="40" y="57" width="240" height="40" rx="3"/><text x="160" y="74" text-anchor="middle">Reverse proxy · :4000</text><text class="sub" x="160" y="89" text-anchor="middle">routes by MD5(key)</text>
+                <path class="flow" d="M160 98V112H55V128"/>
+                <path class="flow" d="M160 98V128"/>
+                <path class="flow" d="M160 98V112H265V128"/>
+                <rect x="10" y="130" width="90" height="32" rx="3"/><text x="55" y="151" text-anchor="middle">shard 1</text>
+                <rect x="115" y="130" width="90" height="32" rx="3"/><text x="160" y="151" text-anchor="middle">shard 2</text>
+                <rect x="220" y="130" width="90" height="32" rx="3"/><text x="265" y="151" text-anchor="middle">shard N</text>
+                <path class="flow" d="M55 163V183"/><path class="flow" d="M160 163V183"/><path class="flow" d="M265 163V183"/>
+                <g><rect class="kept" x="16" y="191" width="84" height="48" rx="3"/><rect class="kept" x="13" y="188" width="84" height="48" rx="3"/><rect x="10" y="185" width="84" height="48" rx="3"/><text x="52" y="205" text-anchor="middle">replicas</text><text class="sub" x="52" y="221" text-anchor="middle">Raft + 2PC</text></g>
+                <g><rect class="kept" x="121" y="191" width="84" height="48" rx="3"/><rect class="kept" x="118" y="188" width="84" height="48" rx="3"/><rect x="115" y="185" width="84" height="48" rx="3"/><text x="157" y="205" text-anchor="middle">replicas</text><text class="sub" x="157" y="221" text-anchor="middle">Raft + 2PC</text></g>
+                <g><rect class="kept" x="226" y="191" width="84" height="48" rx="3"/><rect class="kept" x="223" y="188" width="84" height="48" rx="3"/><rect x="220" y="185" width="84" height="48" rx="3"/><text x="262" y="205" text-anchor="middle">replicas</text><text class="sub" x="262" y="221" text-anchor="middle">Raft + 2PC</text></g>
+              </svg>
+              <figcaption>One proxy, N shards, each shard replicated.</figcaption>
+            </figure>
+          </div>
         </div>
-        <aside class="about-sidebar">
-          <h3 class="sans">Currently</h3>
-          <ul class="now-list">
-            <li>Building voice-driven Discord tooling in Rust</li>
-            <li>Exploring local LLM integration for dev workflows</li>
-            <li>Writing about note-taking as correspondence</li>
-          </ul>
-          <h3 class="sans mt">Find me</h3>
-          <ul class="now-list">
-            <li><a href="https://github.com/hulkhongan300" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-  </main>
+      </article>
 
-  <footer class="site-footer">
-    <div class="footer-line">
-      <p class="sans">Afonso Calisto · Iteration 01 · Ledger</p>
-      <p class="mono">Printed for the mind's library</p>
+      <article class="sheet" id="talk2me" aria-labelledby="tmj-h">
+        <header class="sheet-head"><h3 id="tmj-h">Talk2MeJava</h3><span>Java</span><span>Updated 2026-04-21</span></header>
+        <div class="mini-body">
+          <p>Hold G and talk. A local Whisper model (whisper.cpp through JNA) transcribes what you said and puts the text on your clipboard.</p>
+          <p class="links"><a href="https://github.com/hulkhongan300/Talk2MeJava">Talk2MeJava ↗</a></p>
+        </div>
+      </article>
+
     </div>
-  </footer>
+  </section>
 
-  <script>
-    (function() {
-      const toggle = document.getElementById('theme-toggle');
-      const html = document.documentElement;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const stored = localStorage.getItem('theme');
+  <section id="research" class="wrap section">
+    <header class="sec-head"><h2>Research</h2></header>
+    <article class="sheet" aria-labelledby="b450-h">
+      <header class="sheet-head"><h3 id="b450-h">B450 firmware research</h3><span>Python, shell</span><span>Updated 2026-11-12</span></header>
+      <div class="mini-body">
+        <p>Notes and tools from taking apart the BIOS of a Gigabyte B450 AORUS PRO, to see if coreboot could replace it. It can't: AMD's signed blobs, the chipset's own firmware and the missing AM4 support all get in the way. A side result is tinylinux, a 2 MiB LinuxBoot-style boot menu, tested in QEMU only.</p>
+        <p class="links"><a href="https://github.com/hulkhongan300/AORUS-B450-linuxboot-research">AORUS-B450-linuxboot-research ↗</a></p>
+      </div>
+    </article>
+  </section>
 
-      function applyTheme(theme) {
-        html.dataset.theme = theme;
-        localStorage.setItem('theme', theme);
-        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-        toggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  <section id="lab" class="wrap section">
+    <header class="sec-head"><h2>Lab</h2></header>
+    <p class="lab-note">This is <a href="https://github.com/hulkhongan300/sandbox-Exame">sandbox-Exame</a>, a small raylib program in C, ported to JavaScript. Drag the title bar to move the window and the corner to resize it, like the real one. Click inside, then press R to reset or P to save a screenshot.</p>
+    <div class="desk" id="desk">
+      <div class="win" id="win">
+        <div class="win-bar" id="win-bar">hello from raylib</div>
+        <canvas id="boxes" tabindex="0" aria-label="100 coloured boxes bouncing off each other and the window edges. Press R to reset, P to save a screenshot."></canvas>
+        <div class="win-grip" id="win-grip" aria-hidden="true"></div>
+      </div>
+    </div>
+    <ul class="rows">
+      <li><a href="https://github.com/hulkhongan300/sandbox-Exame"><span class="r-name">sandbox-Exame</span><span class="r-lang">C, raylib</span><span class="r-desc">The window above, built for Wayland</span></a></li>
+      <li><a href="https://github.com/hulkhongan300/Sem-Erros-React-Public"><span class="r-name">Sem-Erros-React-Public</span><span class="r-lang">TypeScript</span><span class="r-desc">React + Vite starter with strict, type-aware ESLint</span></a></li>
+      <li><a href="https://github.com/hulkhongan300/Sem-Erros-Public"><span class="r-name">Sem-Erros-Public</span><span class="r-lang">Java, Maven</span><span class="r-desc">Coursework collection with a standard Maven layout</span></a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap foot"><span>Afonso Calisto, Portugal · <a href="https://github.com/hulkhongan300">GitHub ↗</a></span></footer>
+
+<script>
+// Theme: dark by default like the current site; a click saves the choice.
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme-toggle');
+  function label() {
+    var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    btn.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+    btn.title = 'Switch to ' + next + ' mode';
+  }
+  label();
+  btn.addEventListener('click', function () {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    label();
+  });
+})();
+
+// Project menu: hover, click, focus or arrow keys move the highlight; Enter opens it.
+(function () {
+  var menu = document.getElementById('menu');
+  var items = Array.prototype.slice.call(menu.querySelectorAll('a'));
+  var i = 0;
+  function select(n, focus) {
+    items[i].classList.remove('sel');
+    i = (n + items.length) % items.length;
+    items[i].classList.add('sel');
+    if (focus) items[i].focus({ preventScroll: true });
+  }
+  select(0);
+  items.forEach(function (a, n) {
+    a.addEventListener('mouseenter', function () { select(n); });
+    a.addEventListener('focus', function () { select(n); });
+    a.addEventListener('click', function () { select(n); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    var r = menu.getBoundingClientRect();
+    if (r.top >= innerHeight || r.bottom <= 0) return;
+    var free = document.activeElement === document.body;
+    if (!free && !menu.contains(document.activeElement)) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      select(i + (e.key === 'ArrowDown' ? 1 : -1), true);
+    } else if (e.key === 'Enter' && free) {
+      items[i].click();
+    }
+  });
+})();
+
+// Lab window: drag the title bar to move it, drag the corner to resize it. It stays inside the desk.
+(function () {
+  var desk = document.getElementById('desk'), win = document.getElementById('win');
+  var MIN_W = 220, MIN_H = 160;
+  function place(x, y, w, h) {
+    var dw = desk.clientWidth, dh = desk.clientHeight;
+    w = Math.max(MIN_W, Math.min(w, dw)); h = Math.max(MIN_H, Math.min(h, dh));
+    x = Math.max(0, Math.min(x, dw - w)); y = Math.max(0, Math.min(y, dh - h));
+    win.style.left = x + 'px'; win.style.top = y + 'px';
+    win.style.width = w + 'px'; win.style.height = h + 'px';
+  }
+  function drag(handle, fn) {
+    handle.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      handle.setPointerCapture(e.pointerId);
+      var sx = e.clientX, sy = e.clientY;
+      var s = { x: win.offsetLeft, y: win.offsetTop, w: win.offsetWidth, h: win.offsetHeight };
+      function move(ev) { fn(ev.clientX - sx, ev.clientY - sy, s); }
+      function up() {
+        handle.removeEventListener('pointermove', move);
+        handle.removeEventListener('pointerup', up);
+        handle.removeEventListener('pointercancel', up);
       }
+      handle.addEventListener('pointermove', move);
+      handle.addEventListener('pointerup', up);
+      handle.addEventListener('pointercancel', up);
+    });
+  }
+  drag(document.getElementById('win-bar'), function (dx, dy, s) { place(s.x + dx, s.y + dy, s.w, s.h); });
+  drag(document.getElementById('win-grip'), function (dx, dy, s) {
+    place(s.x, s.y, Math.min(s.w + dx, desk.clientWidth - s.x), Math.min(s.h + dy, desk.clientHeight - s.y));
+  });
+  place(24, 24, Math.min(640, desk.clientWidth - 48), Math.min(430, desk.clientHeight - 80));
+  addEventListener('resize', function () { place(win.offsetLeft, win.offsetTop, win.offsetWidth, win.offsetHeight); });
+})();
 
-      if (stored) {
-        applyTheme(stored);
-      } else {
-        applyTheme('dark');
+// sandbox-Exame, ported from main.c and screen_print.c: 100 boxes, 25 px, 120-300 px/s,
+// box-vs-box collisions, then walls, then the HUD. The window size is the canvas size.
+(function () {
+  var c = document.getElementById('boxes'), ctx = c.getContext('2d');
+  var NUM = 100, S = 25;
+  // raylib colours in the order main.c lists them
+  var PALETTE = ['#c8c8c8', '#828282', '#505050', '#fdf900', '#ffcb00', '#ffa100', '#ff6dc2', '#e62937', '#be2137',
+    '#00e430', '#009e2f', '#00752c', '#66bfff', '#0079f1', '#0052ac', '#c87aff', '#873cbe', '#701f7e',
+    '#d3b083', '#7f6a4f', '#4c3f2f', '#ffffff', '#000000', '#ff00ff', '#f5f5f5'];
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, H = 0, boxes = [], running = false, last = 0, frames = 0, fpsT = 0, fps = 0;
+
+  function rand(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  function overlap(a, b) { return a.x < b.x + S && a.x + S > b.x && a.y < b.y + S && a.y + S > b.y; }
+  function reset() {
+    var maxX = Math.max(0, Math.floor(W - S)), maxY = Math.max(0, Math.floor(H - S));
+    boxes = [];
+    for (var i = 0; i < NUM; i++) {
+      var b = { x: 0, y: 0 };
+      for (var tries = 0; tries < 200; tries++) {  // like ResetBoxes: look for a free spot
+        b.x = rand(0, maxX); b.y = rand(0, maxY);
+        if (!boxes.some(function (o) { return overlap(b, o); })) break;
       }
-
-      toggle.addEventListener('click', function() {
-        const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-      });
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-    })();
-  </script>
+      b.vx = (rand(0, 1) ? 1 : -1) * rand(120, 300);
+      b.vy = (rand(0, 1) ? 1 : -1) * rand(120, 300);
+      b.color = PALETTE[i % PALETTE.length];
+      boxes.push(b);
+    }
+  }
+  function collide(a, b) {  // CollideBoxes: push apart on the shallow axis, swap velocities if approaching
+    var ox = Math.min(a.x, b.x) + S - Math.max(a.x, b.x);
+    var oy = Math.min(a.y, b.y) + S - Math.max(a.y, b.y);
+    if (ox <= 0 || oy <= 0) return;
+    var n, t;
+    if (ox < oy) {
+      n = a.x < b.x ? 1 : -1;
+      a.x -= n * ox / 2; b.x += n * ox / 2;
+      if ((a.vx - b.vx) * n > 0) { t = a.vx; a.vx = b.vx; b.vx = t; }
+    } else {
+      n = a.y < b.y ? 1 : -1;
+      a.y -= n * oy / 2; b.y += n * oy / 2;
+      if ((a.vy - b.vy) * n > 0) { t = a.vy; a.vy = b.vy; b.vy = t; }
+    }
+  }
+  function walls(b) {
+    if (b.x + S >= W) { b.x = W - S; b.vx = -Math.abs(b.vx); } else if (b.x <= 0) { b.x = 0; b.vx = Math.abs(b.vx); }
+    if (b.y + S >= H) { b.y = H - S; b.vy = -Math.abs(b.vy); } else if (b.y <= 0) { b.y = 0; b.vy = Math.abs(b.vy); }
+  }
+  function step(dt) {
+    var i, j;
+    for (i = 0; i < NUM; i++) { boxes[i].x += boxes[i].vx * dt; boxes[i].y += boxes[i].vy * dt; }
+    for (i = 0; i < NUM; i++) for (j = i + 1; j < NUM; j++) collide(boxes[i], boxes[j]);
+    for (i = 0; i < NUM; i++) walls(boxes[i]);
+  }
+  function draw() {
+    ctx.fillStyle = '#f5f5f5';  // RAYWHITE
+    ctx.fillRect(0, 0, W, H);
+    boxes.forEach(function (b) { ctx.fillStyle = b.color; ctx.fillRect(Math.floor(b.x), Math.floor(b.y), S, S); });
+    // PrintToScreen
+    ctx.fillStyle = 'rgba(10, 10, 15, 0.784)'; ctx.fillRect(12, 12, 330, 84);
+    ctx.strokeStyle = 'rgb(80, 120, 200)'; ctx.lineWidth = 1; ctx.strokeRect(12.5, 12.5, 329, 83);
+    ctx.textBaseline = 'top';
+    ctx.font = '18px monospace'; ctx.fillStyle = '#f5f5f5'; ctx.fillText('RAYLIB BOX SIMULATION', 24, 20);
+    ctx.font = '16px monospace'; ctx.fillStyle = '#009e2f'; ctx.fillText('Boxes Count: ' + NUM, 24, 44);
+    ctx.font = '13px monospace'; ctx.fillStyle = '#c8c8c8'; ctx.fillText('FPS: ' + fps + '  |  [R] Reset  |  [P] Screenshot', 24, 68);
+  }
+  function frame(t) {
+    if (!running) return;
+    step(Math.min((t - last) / 1000, 0.05));  // capped so a background tab doesn't teleport boxes
+    last = t;
+    frames++;
+    if (t - fpsT >= 1000) { fps = Math.round(frames * 1000 / (t - fpsT)); frames = 0; fpsT = t; }
+    draw();
+    requestAnimationFrame(frame);
+  }
+  new ResizeObserver(function () {
+    var dpr = window.devicePixelRatio || 1;
+    W = c.clientWidth; H = c.clientHeight;
+    c.width = Math.round(W * dpr); c.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (!boxes.length) reset();
+    if (!running) { boxes.forEach(walls); draw(); }
+  }).observe(c);
+  if (!still) new IntersectionObserver(function (e) {
+    if (e[0].isIntersecting && !running) { running = true; last = fpsT = performance.now(); frames = 0; requestAnimationFrame(frame); }
+    else if (!e[0].isIntersecting) running = false;
+  }).observe(c);
+  c.addEventListener('keydown', function (e) {
+    var k = e.key.toLowerCase();
+    if (k === 'r') { reset(); if (!running) draw(); }
+    else if (k === 'p') {
+      var a = document.createElement('a');
+      a.download = 'screenshot.png';
+      a.href = c.toDataURL('image/png');
+      a.click();
+    }
+  });
+})();
+</script>
 </body>
 </html>
